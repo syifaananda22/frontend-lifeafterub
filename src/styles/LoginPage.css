@@ -1,0 +1,334 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* PAGE ANIMATION */
+.fade-in {
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CONTAINER */
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+/* LEFT SIDE */
+.left {
+  flex: 1.1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px;
+}
+
+.left-content {
+  max-width: 620px;
+  width: 100%;
+}
+
+/* LOGO (DIPERKECIL SEDIKIT) */
+.logo {
+  width: 190px;
+  margin-bottom: 30px;
+  margin-top: -45px;
+}
+
+/* HERO IMAGE */
+.hero-box {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 22px;
+  margin-bottom: 28px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.hero-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.hero-box img:hover {
+  transform: scale(1.01);
+}
+
+/* TEXT (DIPERKECIL SEDIKIT) */
+.left h1 {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.2;
+  color: #111827;
+}
+
+.left p {
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+/* WELCOME LINE */
+.welcome-box {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.line {
+  width: 4px;
+  height: 80px;
+  background: linear-gradient(to bottom, #f5c400, #ddd);
+  border-radius: 10px;
+}
+
+/* RIGHT SIDE */
+.right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px;
+}
+
+/* LOGIN CARD (DIPERKECIL SEDIKIT) */
+.card {
+  width: 100%;
+  max-width: 440px;
+  background: #102c6a;
+  color: white;
+  padding: 40px;
+  border-radius: 28px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.18);
+}
+
+/* TITLE */
+.card h2 {
+  text-align: center;
+  font-size: 27px;
+  margin-bottom: 26px;
+  position: relative;
+  font-weight: 700;
+}
+
+.card h2::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: #f5c400;
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 999px;
+}
+
+/* INPUT (DIPERKECIL SEDIKIT) */
+.card input {
+  width: 100%;
+  padding: 15px 18px;
+  border-radius: 999px;
+  border: none;
+  margin-bottom: 14px;
+  font-size: 15px;
+  transition: all 0.25s ease;
+}
+
+.card input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(245,196,0,0.35);
+  transform: scale(1.01);
+}
+
+/* FORGOT */
+.options {
+  text-align: right;
+  margin-bottom: 18px;
+}
+
+.forgot {
+  font-size: 14px;
+  color: #f5c400;
+  cursor: pointer;
+}
+
+/* BUTTON LOGIN (DIPERKECIL SEDIKIT) */
+.btn-login {
+  width: 100%;
+  padding: 15px;
+  border-radius: 999px;
+  background: #f5c400;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-login:hover {
+  transform: scale(1.02);
+}
+
+/* DIVIDER */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+  font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.divider span {
+  margin: 0 10px;
+}
+
+/* GOOGLE BUTTON (DIPERKECIL SEDIKIT) */
+.btn-google {
+  width: 100%;
+  padding: 14px;
+  border-radius: 999px;
+  background: white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-google:hover {
+  transform: scale(1.02);
+}
+
+.btn-google img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* REGISTER */
+.register {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 14px;
+  color: #ddd;
+}
+
+.link-yellow {
+  color: #f5c400;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.link-yellow:hover {
+  text-decoration: underline;
+}
+
+/* REGISTER CARD */
+.register-card {
+  padding: 45px;
+  max-width: 470px;
+}
+
+/* LABEL */
+.label {
+  font-size: 14px;
+  margin-bottom: 7px;
+  display: block;
+  color: #ffffffcc;
+}
+
+/* PASSWORD RULES */
+.password-rules {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.password-rules p {
+  margin: 4px 0;
+}
+
+.valid {
+  color: #2ecc71;
+}
+
+.invalid {
+  color: #ff4d4d;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left,
+  .right {
+    padding: 40px 24px;
+  }
+
+  .left-content {
+    text-align: center;
+  }
+
+  .welcome-box {
+    justify-content: center;
+  }
+
+  .logo {
+    margin-top: 0;
+  }
+
+  .left h1 {
+    font-size: 34px;
+  }
+
+  .left p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    width: 160px;
+  }
+
+  .left h1 {
+    font-size: 28px;
+  }
+
+  .card {
+    padding: 32px 24px;
+  }
+
+  .card h2 {
+    font-size: 24px;
+  }
+}
