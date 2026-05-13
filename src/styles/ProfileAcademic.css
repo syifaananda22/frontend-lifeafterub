@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* PAGE */
+.fade-in {
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* CONTAINER */
+.container {
+  display: flex;
+  height: 100vh;
+  background: #ffffff;
+}
+
+/* LEFT */
+.left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.left-content {
+  max-width: 480px;
+}
+
+/* LOGO */
+.logo {
+  width: 140px;
+  margin-bottom: 20px;
+}
+
+/* HERO */
+.hero-box {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.hero-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TEXT */
+.left h1 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.left p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* RIGHT */
+.right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+/* CARD (SAMA LOGIN STYLE) */
+.card {
+  width: 100%;
+  max-width: 360px;
+  background: #102c6a;
+  color: white;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+}
+
+/* TITLE */
+.card h2 {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.card h2::after {
+  content: "";
+  width: 45px;
+  height: 3px;
+  background: #f5c400;
+  display: block;
+  margin: 8px auto 0;
+  border-radius: 10px;
+}
+
+/* INPUT */
+.card input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 999px;
+  border: none;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+/* SELECT */
+.select-input {
+  width: 100%;
+  padding: 10px 40px 10px 14px;
+  border-radius: 999px;
+  border: none;
+  margin-bottom: 12px;
+  font-size: 13px;
+
+  background: #fff;
+  color: #000;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  cursor: pointer;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23333' viewBox='0 0 20 20'%3E%3Cpath d='M5 7l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px;
+}
+
+/* DISABLED PRODI (ABU SOFT SESUAI REQUEST) */
+.select-input:disabled {
+  background: #f0f0f0 !important;
+  color: #999 !important;
+  opacity: 1;
+  cursor: not-allowed;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23999' viewBox='0 0 20 20'%3E%3Cpath d='M5 7l5 5 5-5z'/%3E%3C/svg%3E");
+}
+
+/* FOCUS */
+.card input:focus,
+.select-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(245,196,0,0.4);
+  transform: scale(1.02);
+}
+
+/* BUTTON */
+.btn-login {
+  width: 100%;
+  padding: 10px;
+  border-radius: 999px;
+  background: #f5c400;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-login:active {
+  transform: scale(0.96);
+}
+
+.card input {
+  color: #000 !important;
+  -webkit-text-fill-color: #000 !important;
+}

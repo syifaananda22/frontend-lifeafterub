@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../styles/LoginPage.css";
 
 export default function RegisterPage() {
@@ -16,6 +17,53 @@ export default function RegisterPage() {
   const isValid =
     hasMinLength && hasNumber && hasSymbol && hasUppercase;
 
+  // REGISTER FUNCTION (TAMBAHAN)
+  const handleRegister = async () => {
+    if (!email || !password) {
+      window.showToast("Email dan password wajib diisi", "error");
+      return;
+    }
+
+    if (!isValid) {
+      window.showToast("Password belum memenuhi syarat", "error");
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/register",
+        {
+          email,
+          password,
+        }
+      );
+
+      // SIMPAN TOKEN
+      localStorage.setItem("token", response.data.token);
+
+      // SET HEADER AXIOS
+      axios.defaults.headers.common[
+        "Authorization"
+      ] = `Bearer ${response.data.token}`;
+
+      window.showToast(response.data.message, "success");
+
+      // REDIRECT KE PROFILE ACADEMIC
+      setTimeout(() => {
+        navigate("/profileacademic");
+      }, 800);
+
+    } catch (error) {
+      console.log(error);
+
+      if (error.response) {
+        window.showToast(error.response.data.message, "error");
+      } else {
+        window.showToast("Terjadi kesalahan server", "error");
+      }
+    }
+  };
+
   return (
     <div className="container fade-in">
 
@@ -29,7 +77,6 @@ export default function RegisterPage() {
             <img src="/hero.png" />
           </div>
 
-          {/* UPDATED TEXT */}
           <h1>Mulai Perjalanan Karier Digital</h1>
           <p>
             Daftar untuk mengakses fitur dan memulai perjalanan karier Anda.
@@ -42,7 +89,6 @@ export default function RegisterPage() {
       <div className="right">
         <div className="card register-card">
 
-          {/* HEADER FORM */}
           <div className="title-box">
             <div className="line-title-fixed"></div>
 
@@ -94,6 +140,7 @@ export default function RegisterPage() {
           <button
             className="btn-login"
             disabled={!isValid}
+            onClick={handleRegister}
             style={{
               opacity: isValid ? 1 : 0.5,
               cursor: isValid ? "pointer" : "not-allowed",
@@ -103,10 +150,13 @@ export default function RegisterPage() {
             Daftar
           </button>
 
-          {/* LINK LOGIN */}
+          {/* LOGIN LINK */}
           <p className="register">
             Sudah punya akun?{" "}
-            <span className="link-yellow" onClick={() => navigate("/")}>
+            <span
+              className="link-yellow"
+              onClick={() => navigate("/")}
+            >
               Masuk
             </span>
           </p>

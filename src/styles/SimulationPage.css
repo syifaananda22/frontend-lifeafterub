@@ -1,0 +1,289 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI",sans-serif;
+}
+
+/* ================= PAGE ================= */
+
+.dashboard-page{
+  min-height:100vh;
+  background:#f5f7fb;
+  padding:22px 38px;
+  overflow-x:hidden;
+}
+
+/* ================= HERO ================= */
+
+.simulation-hero{
+  margin-top:34px;
+  background:#ffffff;
+  border-radius:24px;
+  padding:32px;
+  border:1px solid #edf1f7;
+  box-shadow:0 8px 24px rgba(16,44,106,0.04);
+}
+
+.simulation-hero h1{
+  font-size:30px;
+  color:#102c6a;
+  margin-bottom:12px;
+}
+
+.simulation-hero p{
+  color:#667085;
+  font-size:14px;
+  line-height:1.8;
+  max-width:680px;
+}
+
+/* ================= JURUSAN ================= */
+
+.major-box{
+  margin-top:24px;
+  background:#f8fbff;
+  border:1px solid #dbe7ff;
+  padding:18px;
+  border-radius:18px;
+  max-width:380px;
+}
+
+.major-box span{
+  color:#6b7280;
+  font-size:12px;
+}
+
+.major-box h3{
+  color:#102c6a;
+  margin-top:6px;
+  margin-bottom:14px;
+  font-size:20px;
+}
+
+.major-select{
+  width:100%;
+  padding:13px;
+  border-radius:12px;
+  border:1px solid #d6deeb;
+  outline:none;
+  font-size:14px;
+  background:#ffffff;
+}
+
+/* ================= SECTION ================= */
+
+.simulation-section{
+  margin-top:36px;
+}
+
+.field-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+/* ================= FIELD CARD ================= */
+
+.field-card{
+  background:#ffffff;
+  border-radius:22px;
+  padding:20px;
+  border:1px solid #edf1f7;
+  cursor:pointer;
+  transition:0.25s ease;
+  box-shadow:0 8px 22px rgba(16,44,106,0.04);
+
+  min-height:135px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.field-card:hover{
+  transform:translateY(-4px);
+}
+
+.field-card h3{
+  color:#102c6a;
+  font-size:18px;
+  line-height:1.5;
+}
+
+.field-card span{
+  color:#f5c400;
+  font-size:12px;
+  font-weight:700;
+}
+
+.active-field{
+  border:2px solid #102c6a;
+  background:#f8fbff;
+}
+
+/* ================= CAREER LIST ================= */
+
+.career-list-section{
+  margin-top:38px;
+}
+
+.career-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+/* ================= CAREER CARD ================= */
+
+.career-card{
+  position:relative;
+  border-radius:22px;
+  overflow:hidden;
+  min-height:320px;
+
+  background:#ffffff;
+
+  border:1px solid #edf1f7;
+
+  box-shadow:0 8px 22px rgba(16,44,106,0.05);
+
+  transition:0.25s ease;
+}
+
+.career-card:hover{
+  transform:translateY(-4px);
+}
+
+.career-card img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+}
+
+/* ================= OVERLAY ================= */
+
+.career-overlay{
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(
+    to top,
+    rgba(16,44,106,0.94),
+    rgba(16,44,106,0.15)
+  );
+
+  display:flex;
+  align-items:flex-end;
+}
+
+/* ================= CONTENT ================= */
+
+.career-content{
+  width:100%;
+  padding:20px;
+}
+
+.career-content h3{
+  color:#ffffff;
+  font-size:20px;
+  margin-bottom:8px;
+}
+
+.salary{
+  color:#ffffff;
+  font-size:14px;
+  font-weight:700;
+  margin-bottom:16px;
+}
+
+/* ================= SKILL ================= */
+
+.skill-wrapper{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:18px;
+}
+
+.skill-wrapper span{
+  background:rgba(255,255,255,0.18);
+  color:#ffffff;
+  padding:7px 11px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:700;
+  backdrop-filter:blur(8px);
+}
+
+/* ================= BUTTON ================= */
+
+.career-content button{
+  width:100%;
+  border:none;
+  background:#f5c400;
+  color:#102c6a;
+  padding:12px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:800;
+  transition:0.2s ease;
+  font-size:13px;
+}
+
+.career-content button:hover{
+  opacity:0.92;
+}
+
+/* ================= LOADING ================= */
+
+.loading-box{
+  width:100%;
+  background:#ffffff;
+  border-radius:20px;
+  padding:34px;
+  text-align:center;
+  color:#102c6a;
+  font-weight:700;
+  border:1px solid #edf1f7;
+  box-shadow:0 8px 24px rgba(16,44,106,0.04);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1200px){
+
+  .field-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .career-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:768px){
+
+  .dashboard-page{
+    padding:18px;
+  }
+
+  .field-grid,
+  .career-grid{
+    grid-template-columns:1fr;
+  }
+
+  .simulation-hero{
+    padding:26px;
+  }
+
+  .simulation-hero h1{
+    font-size:26px;
+  }
+
+  .career-card img{
+    height:300px;
+  }
+
+}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../styles/LoginPage.css";
 
 export default function LoginPage() {
@@ -8,12 +9,49 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (!email || !password) {
-      alert("Email dan password wajib diisi");
+      window.showToast("Email dan password wajib diisi", "error");
       return;
     }
-    alert("Login berhasil!");
+
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/login",
+        {
+          email,
+          password,
+        }
+      );
+
+      // SIMPAN TOKEN
+      localStorage.setItem("token", response.data.token);
+
+      // 🔥 TAMBAHAN PENTING: SIMPAN NAMA USER
+      localStorage.setItem("nama", response.data.user?.nama);
+      localStorage.setItem("prodi", response.data.user?.prodi);
+
+      // SET HEADER AXIOS
+      axios.defaults.headers.common[
+        "Authorization"
+      ] = `Bearer ${response.data.token}`;
+
+      window.showToast(response.data.message, "success");
+
+      // REDIRECT KE DASHBOARD
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 500);
+
+    } catch (error: any) {
+      console.log(error);
+
+      if (error.response) {
+        window.showToast(error.response.data.message, "error");
+      } else {
+        window.showToast("Terjadi kesalahan", "error");
+      }
+    }
   };
 
   return (
@@ -79,7 +117,10 @@ export default function LoginPage() {
 
           <p className="register">
             Belum punya akun?{" "}
-            <span className="link-yellow" onClick={() => navigate("/register")}>
+            <span
+              className="link-yellow"
+              onClick={() => navigate("/register")}
+            >
               Daftar
             </span>
           </p>
