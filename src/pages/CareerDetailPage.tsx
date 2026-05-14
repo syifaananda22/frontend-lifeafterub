@@ -111,7 +111,7 @@ export default function CareerDetailPage() {
   */
 
   return (
-    <div className="career-detail-page fade-in">
+    <div className="career-detail-page fade-page">
 
       {/* NAVBAR */}
       <nav className="dashboard-navbar">
@@ -214,7 +214,7 @@ export default function CareerDetailPage() {
       )}
 
       {/* FOOTER */}
-      <footer className="dashboard-footer">
+      <footer className="dashboard-footer career-detail-footer">
 
         <div className="footer-top">
 

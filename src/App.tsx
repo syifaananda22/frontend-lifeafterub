@@ -6,9 +6,12 @@ import ProfileAcademic from "./pages/ProfileAcademic";
 import Dashboard from "./pages/Dashboard";
 import SimulationPage from "./pages/SimulationPage";
 import CareerDetailPage from "./pages/CareerDetailPage";
+import AlumniCareerPage from "./pages/AlumniCareerPage";
+import RecommendationPage from "./pages/RecommendationPage";
 
 /* ================= TAMBAHAN INI ================= */
 import HistoryPage from "./pages/HistoryPage";
+import ProfilePage from "./pages/ProfilePage";
 /* =============================================== */
 
 import Toast from "./components/Toast";
@@ -37,9 +40,15 @@ export default function App() {
 
         {/* ================= TAMBAHAN INI ================= */}
         <Route path="/history" element={<HistoryPage />} />
+
+        <Route path="/profil" element={<ProfilePage />} />
         {/* =============================================== */}
 
         <Route path="*" element={<Navigate to="/" />} />
+
+        <Route path="/career" element={<AlumniCareerPage />} />
+
+        <Route path="/recommendation" element={<RecommendationPage />} />
 
       </Routes>
 

@@ -1,25 +1,243 @@
+.history-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+  padding: 22px 38px;
+  overflow-x: hidden;
+}
+
+.history-hero {
+  margin-top: 34px;
+  padding: 34px 28px;
+  border-radius: 24px;
+
+  background: #102c6a;
+
+  color: white;
+
+  border: 1px solid #edf1f7;
+
+  box-shadow:
+    0 8px 22px rgba(16,44,106,0.04);
+}
+
+.history-badge {
+  width: max-content;
+  display: inline-block;
+  background: #fff4bf;
+  color: #102c6a;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.history-hero h1 {
+  font-size: 26px;
+  margin-top: 14px;
+}
+
+.history-hero p {
+  color: #eef4ff;
+  margin-top: 10px;
+  max-width: 560px;
+  line-height: 1.8;
+  font-size: 13px;
+}
+
+.history-container {
+  margin-top: 28px;
+  padding-bottom: 38px;
+}
+
+.history-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.history-title-row h2 {
+  color: #102c6a;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.history-title-row p {
+  color: #667085;
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+.explore-btn {
+  border: none;
+  background: #f5c400;
+  color: #102c6a;
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(245,196,0,0.22);
+}
+
 .history-list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-top: 20px;
+  gap: 16px;
 }
 
 .history-card {
-  background: #fff;
-  padding: 16px;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 22px;
+  border: 1px solid #edf1f7;
+  box-shadow: 0 8px 22px rgba(16,44,106,0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.25s ease;
+}
+
+.history-card:hover {
+  transform: translateY(-2px);
+}
+
+.history-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.history-icon {
+  width: 48px;
+  height: 48px;
   border-radius: 16px;
+  background: #f8fbff;
+  border: 1px solid #dbe7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.history-label {
+  display: inline-block;
+  background: #fff4bf;
+  color: #102c6a;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.history-card h3 {
+  color: #102c6a;
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.history-card p {
+  color: #667085;
+  font-size: 13px;
+}
+
+.history-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.detail-history-btn,
+.delete-history-btn {
+  border: none;
+  padding: 11px 14px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.detail-history-btn {
+  background: #102c6a;
+  color: white;
+}
+
+.delete-history-btn {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.delete-history-btn:hover {
+  background: #dc2626;
+  color: white;
+}
+
+.empty-history-box {
+  background: white;
+  text-align: center;
+  padding: 58px 24px;
+  border-radius: 22px;
   border: 1px solid #edf1f7;
   box-shadow: 0 8px 22px rgba(16,44,106,0.04);
 }
 
-.history-title {
-  font-weight: 800;
+.empty-history-box h3 {
   color: #102c6a;
-  margin-bottom: 6px;
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 10px;
 }
 
-.history-date {
-  font-size: 12px;
-  color: #6b7280;
+.empty-history-box p {
+  color: #667085;
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+.empty-history-box button {
+  border: none;
+  background: #f5c400;
+  color: #102c6a;
+  padding: 13px 18px;
+  border-radius: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.history-footer {
+  margin-top: 38px;
+}
+
+@media (max-width: 768px) {
+  .history-page {
+    padding: 18px;
+  }
+
+  .history-title-row,
+  .history-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .history-actions,
+  .detail-history-btn,
+  .delete-history-btn,
+  .explore-btn {
+    width: 100%;
+  }
+}
+
+.history-loading-box {
+  background: white;
+  text-align: center;
+  padding: 40px 24px;
+  border-radius: 22px;
+  border: 1px solid #edf1f7;
+  box-shadow: 0 8px 22px rgba(16,44,106,0.04);
+  color: #102c6a;
+  font-size: 13px;
+  font-weight: 800;
 }

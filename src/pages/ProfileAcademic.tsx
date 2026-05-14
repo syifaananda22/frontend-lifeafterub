@@ -123,7 +123,7 @@ export default function ProfileAcademic() {
 
   return (
 
-    <div className="container fade-in">
+    <div className="container fade-page">
 
       {/* LEFT */}
       <div className="left">

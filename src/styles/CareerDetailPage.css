@@ -132,6 +132,8 @@
   flex-direction:column;
 
   gap:16px;
+
+  padding-bottom:38px;
 }
 
 /* ================= DETAIL BOX ================= */
@@ -263,95 +265,6 @@
   font-weight:800;
 }
 
-/* ================= HELP BUTTON ================= */
-
-.help-button{
-  position:fixed;
-
-  right:26px;
-  bottom:26px;
-
-  width:56px;
-  height:56px;
-
-  border:none;
-
-  border-radius:50%;
-
-  background:#f5c400;
-  color:#102c6a;
-
-  font-size:20px;
-  font-weight:800;
-
-  cursor:pointer;
-
-  z-index:999;
-
-  box-shadow:
-    0 12px 24px rgba(245,196,0,0.28);
-
-  transition:0.25s ease;
-}
-
-.help-button:hover{
-  transform:scale(1.05);
-}
-
-/* ================= HELP POPUP ================= */
-
-.help-popup-simple{
-  position:fixed;
-
-  bottom:92px;
-  right:26px;
-
-  width:270px;
-
-  background:#ffffff;
-
-  border-radius:18px;
-
-  padding:16px;
-
-  border:1px solid #edf1f7;
-
-  box-shadow:
-    0 10px 28px rgba(16,44,106,0.08);
-
-  z-index:999;
-}
-
-.help-popup-simple span{
-  color:#667085;
-
-  line-height:1.8;
-
-  font-size:12px;
-}
-
-.help-popup-simple button{
-  margin-top:14px;
-
-  width:100%;
-
-  border:none;
-
-  background:#102c6a;
-
-  color:#ffffff;
-
-  padding:10px;
-
-  border-radius:10px;
-
-  cursor:pointer;
-
-  font-weight:700;
-
-  font-size:12px;
-}
-
 /* ================= RESPONSIVE ================= */
 
 @media(max-width:1200px){
@@ -419,29 +332,41 @@
 
 .popup-success {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  top: 28px;
+  right: 28px;
+
+  width: max-content;
+  max-width: 320px;
+  height: auto;
+
   background: #16a34a;
   color: white;
-  padding: 12px 18px;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 500;
+
+  padding: 14px 18px;
+  border-radius: 14px;
+
+  font-size: 13px;
+  font-weight: 700;
+
   z-index: 9999;
 
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(22,163,74,0.22);
 
-  animation: slideUp 0.3s ease;
+  animation: fadeIn 0.25s ease;
 }
 
-/* animasi masuk */
-@keyframes slideUp {
+@keyframes fadeIn {
   from {
-    transform: translateY(20px);
     opacity: 0;
+    transform: translateY(4px);
   }
+
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.career-detail-footer {
+  margin-top: 38px;
 }

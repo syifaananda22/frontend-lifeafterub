@@ -126,6 +126,7 @@
 
 .career-list-section{
   margin-top:38px;
+  padding-bottom:38px;
 }
 
 .career-grid{
@@ -247,6 +248,10 @@
   font-weight:700;
   border:1px solid #edf1f7;
   box-shadow:0 8px 24px rgba(16,44,106,0.04);
+}
+
+.simulation-footer{
+  margin-top:38px;
 }
 
 /* ================= RESPONSIVE ================= */

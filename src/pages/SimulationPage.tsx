@@ -131,7 +131,7 @@ export default function SimulationPage() {
 
   return (
 
-    <div className="dashboard-page fade-in">
+    <div className="dashboard-page fade-page">
 
       {/* ================= NAVBAR ================= */}
 
@@ -167,7 +167,7 @@ export default function SimulationPage() {
 
           <span
             onClick={() =>
-              navigate("/profile")
+              navigate("/profil")
             }
           >
             PROFIL
@@ -421,7 +421,7 @@ export default function SimulationPage() {
 
       {/* ================= FOOTER ================= */}
 
-      <footer className="dashboard-footer">
+      <footer className="dashboard-footer simulation-footer">
 
         <div className="footer-top">
 

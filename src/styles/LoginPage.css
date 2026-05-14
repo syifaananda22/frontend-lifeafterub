@@ -217,6 +217,8 @@
   align-items: center;
   gap: 10px;
   font-size: 14px;
+  font-weight: 580;
+
   cursor: pointer;
   transition: all 0.25s ease;
 }

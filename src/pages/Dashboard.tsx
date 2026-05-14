@@ -1,27 +1,58 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../styles/Dashboard.css";
 
 export default function Dashboard() {
 
   const navigate = useNavigate();
   const [helpOpen, setHelpOpen] = useState(false);
+  const [lastSimulation, setLastSimulation] = useState<any>(null);
+  const [nama, setNama] = useState(
+  localStorage.getItem("nama") || "User"
+);
 
-  // AMBIL NAMA USER
-  const nama = localStorage.getItem("nama");
+  useEffect(() => {
+    getDashboardData();
+  }, []);
 
-  // RIWAYAT SIMULASI
-  const lastSimulation =
-    localStorage.getItem("lastSimulation");
+  const getDashboardData = async () => {
+    try {
+      const token = localStorage.getItem("token");
 
-    const lastCareerId =
-  localStorage.getItem(
-    "lastCareerId"
-  );
+      const historyResponse = await axios.get(
+        "http://127.0.0.1:8000/api/history",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      setLastSimulation(historyResponse.data.data[0] || null);
+
+      const profileResponse = await axios.get(
+        "http://127.0.0.1:8000/api/profil",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      const namaUser = profileResponse.data.data.nama || "User";
+
+setNama(namaUser);
+localStorage.setItem("nama", namaUser);
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
 
-    <div className="dashboard-page fade-in">
+    <div className="dashboard-page fade-page">
 
       {/* ================= NAVBAR ================= */}
 
@@ -50,7 +81,7 @@ export default function Dashboard() {
           </span>
 
           <span
-            onClick={() => navigate("/profile")}
+            onClick={() => navigate("/profil")}
           >
             PROFIL
           </span>
@@ -423,7 +454,7 @@ export default function Dashboard() {
             <div className="simulation-content">
 
               <h3>
-                {lastSimulation}
+                {lastSimulation.title}
               </h3>
 
               <p>
@@ -432,14 +463,14 @@ export default function Dashboard() {
               </p>
 
               <button
-  onClick={() =>
-    navigate(
-      `/career/${lastCareerId}`
-    )
-  }
->
-  Lanjutkan
-</button>
+                onClick={() =>
+                  navigate(
+                    `/career/${lastSimulation.career_id}`
+                  )
+                }
+              >
+                Lanjutkan
+              </button>
 
             </div>
 
