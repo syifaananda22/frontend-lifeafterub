@@ -30,6 +30,7 @@ export default function LoginPage() {
       // 🔥 TAMBAHAN PENTING: SIMPAN NAMA USER
       localStorage.setItem("nama", response.data.user?.nama);
       localStorage.setItem("prodi", response.data.user?.prodi);
+      localStorage.setItem("role", response.data.user?.role);
 
       // SET HEADER AXIOS
       axios.defaults.headers.common[
@@ -38,10 +39,16 @@ export default function LoginPage() {
 
       window.showToast(response.data.message, "success");
 
-      // REDIRECT KE DASHBOARD
-      setTimeout(() => {
-        navigate("/dashboard");
-      }, 500);
+      // REDIRECT BERDASARKAN ROLE
+setTimeout(() => {
+
+  if (response.data.user?.role === "admin") {
+    navigate("/admin/dashboard");
+  } else {
+    navigate("/dashboard");
+  }
+
+}, 500);
 
     } catch (error: any) {
       console.log(error);

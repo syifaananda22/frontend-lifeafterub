@@ -149,20 +149,25 @@ localStorage.setItem("nama", namaUser);
 
           {/* SIMULASI */}
           <div
-            className="fitur-card"
-            onClick={() => navigate("/simulation")}
-          >
+  className="fitur-card"
+  onClick={() => navigate("/simulation")}
+>
+  <img src="/fitur1.png" alt="" />
 
-            <img src="/fitur1.png" />
+<span className="fitur-badge">
+  Career Simulation
+</span>
 
-            <h3>Mulai Simulasi</h3>
+<h3>Simulasi Karir</h3>
 
-            <p>
-              Ikuti simulasi interaktif untuk mengetahui
-              bidang karir yang paling cocok untukmu.
-            </p>
+  <p>
+    Ikuti simulasi interaktif untuk mengetahui bidang karir yang paling cocok untukmu.
+  </p>
 
-          </div>
+  <span className="fitur-link">
+    Mulai →
+  </span>
+</div>
 
           {/* KARIR */}
           <div
@@ -172,12 +177,19 @@ localStorage.setItem("nama", namaUser);
 
             <img src="/fitur2.png" />
 
+<span className="fitur-badge">
+  Alumni Career
+</span>
             <h3>Karir Alumni</h3>
 
             <p>
               Jelajahi perjalanan karir alumni UB
               dari berbagai bidang industri modern.
             </p>
+
+            <span className="fitur-link">
+  Jelajahi →
+</span>
 
           </div>
 
@@ -189,12 +201,20 @@ localStorage.setItem("nama", namaUser);
 
             <img src="/fitur3.png" />
 
-            <h3>Rekomendasi Karir</h3>
+<span className="fitur-badge">
+  Career Recommendation
+</span>
+
+<h3>Rekomendasi Karir</h3>
 
             <p>
               Dapatkan rekomendasi profesi berdasarkan
               minat dan kemampuan akademikmu.
             </p>
+
+            <span className="fitur-link">
+  Lihat Rekomendasi →
+</span>
 
           </div>
 

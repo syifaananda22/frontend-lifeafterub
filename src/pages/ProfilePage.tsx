@@ -10,7 +10,7 @@ export default function ProfilePage() {
 
   const [helpOpen, setHelpOpen] = useState(false);
   const [popup, setPopup] = useState("");
-const [popupType, setPopupType] = useState("success");
+  const [popupType, setPopupType] = useState("success");
   const [fotoPreview, setFotoPreview] = useState<string | null>(null);
   const [fotoFile, setFotoFile] = useState<File | null>(null);
 
@@ -30,13 +30,17 @@ const [popupType, setPopupType] = useState("success");
   const prodiOptions: any = {
     "Fakultas Vokasi": [
       "D3 Teknologi Informasi",
+      "D3 Administrasi Bisnis",
+      "D3 Keuangan dan Perbankan",
       "D4 Desain Grafis",
       "D4 Manajemen Perhotelan",
     ],
     "Fakultas Ilmu Komputer": [
-      "S1 Informatika",
       "S1 Sistem Informasi",
       "S1 Teknologi Informasi",
+      "S1 Pendidikan Teknologi Informasi",
+      "S1 Teknik Informatika",
+      "S1 Teknik Komputer",
     ],
   };
 
@@ -157,6 +161,13 @@ const [popupType, setPopupType] = useState("success");
       setPopup("Password lama salah atau gagal diganti");
       setTimeout(() => setPopup(""), 2000);
     }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("nama");
+
+    navigate("/");
   };
 
   return (
@@ -286,20 +297,24 @@ const [popupType, setPopupType] = useState("success");
           <button className="profile-password-btn" onClick={changePassword}>
             Ganti Password
           </button>
+
+          <button className="profile-logout-btn" onClick={handleLogout}>
+            Logout Akun
+          </button>
         </div>
       </section>
 
       {popup && (
-  <div
-    className={
-      popupType === "success"
-        ? "popup-success"
-        : "popup-error"
-    }
-  >
-    {popupType === "success" ? "✔" : "✕"} {popup}
-  </div>
-)}
+        <div
+          className={
+            popupType === "success"
+              ? "popup-success"
+              : "popup-error"
+          }
+        >
+          {popupType === "success" ? "✔" : "✕"} {popup}
+        </div>
+      )}
 
       <footer className="dashboard-footer profile-footer">
         <div className="footer-top">

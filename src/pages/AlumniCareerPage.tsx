@@ -174,16 +174,15 @@ export default function AlumniCareerPage() {
             {alumni.map((item) => (
               <div className="alumni-card" key={item.id}>
                 <div className="alumni-photo">
-                  {item.foto ? (
-                    <img
-                      src={`http://127.0.0.1:8000/storage/${item.foto}`}
-                      alt={item.nama}
-                    />
-                  ) : (
-                    <span>{item.nama.charAt(0).toUpperCase()}</span>
-                  )}
-                </div>
-
+                      {item.foto ? (
+                            <img
+                              src={item.foto}
+                              alt={item.nama}
+                            />
+                               ) : (
+                <span>{item.nama.charAt(0).toUpperCase()}</span>
+                               )}
+                            </div>
                 <div className="alumni-content">
                   <span className="alumni-field">{item.bidang}</span>
 

@@ -135,27 +135,46 @@
   transform: translateY(-2px);
 }
 
+.alumni-card:hover img {
+  transform: scale(1.02);
+}
+
 .alumni-photo {
   width: 100%;
-  height: 180px;
+  height: 230px;
+
   border-radius: 18px;
-  background: #102c6a;
-  color: white;
+
+  background: #ffffff;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   overflow: hidden;
 
   font-size: 42px;
   font-weight: 800;
+
   margin-bottom: 16px;
+
+  border: 1.5px solid #edf1f7;
+
+  box-shadow:
+    0 4px 14px rgba(16,44,106,0.04),
+    inset 0 0 0 1px rgba(255,255,255,0.7);
 }
 
 .alumni-photo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  transition: 0.3s ease;
+  object-fit: contain;
+  object-position: center;
+
+  display: block;
 }
+
 
 .alumni-field {
   display: inline-block;
