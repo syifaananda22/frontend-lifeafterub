@@ -13,7 +13,7 @@ export default function AdminCareersPage() {
   const [deleteId, setDeleteId] = useState<number | null>(null);
 
   const [form, setForm] = useState({
-    career_field_id: "",
+    field_id: "",
     title: "",
     description: "",
     salary: "",
@@ -43,7 +43,7 @@ export default function AdminCareersPage() {
   const openCreateModal = () => {
     setEditId(null);
     setForm({
-      career_field_id: "",
+      field_id: "",
       title: "",
       description: "",
       salary: "",
@@ -59,7 +59,7 @@ export default function AdminCareersPage() {
   const openEditModal = (career: any) => {
     setEditId(career.id);
     setForm({
-      career_field_id: career.career_field_id || "",
+      field_id: career.field_id || "",
       title: career.title || "",
       description: career.description || "",
       salary: career.salary || "",
@@ -138,6 +138,8 @@ export default function AdminCareersPage() {
               <th>Nama Karir</th>
               <th>Salary</th>
               <th>Skill</th>
+              <th>Tools</th>
+              <th>Prospek</th>
               <th>Image</th>
               <th>Aksi</th>
             </tr>
@@ -147,10 +149,12 @@ export default function AdminCareersPage() {
             {careers.map((career: any) => (
               <tr key={career.id}>
                 <td>{career.id}</td>
-                <td>{career.career_field_id}</td>
+                <td>{career.field_id}</td>
                 <td>{career.title}</td>
                 <td>{career.salary || "-"}</td>
                 <td>{career.skill || "-"}</td>
+                <td>{career.tools || "-"}</td>
+                <td>{career.prospek || "-"}</td>
                 <td>{career.image || "-"}</td>
 
                 <td>
@@ -188,14 +192,14 @@ export default function AdminCareersPage() {
           <div className="admin-modal admin-wide-modal">
             <h2>{editId ? "Edit Data Karir" : "Tambah Data Karir"}</h2>
 
-            <label>Career Field ID</label>
+            <label>Field ID</label>
             <input
               type="text"
-              value={form.career_field_id}
+              value={form.field_id}
               onChange={(e) =>
                 setForm({
                   ...form,
-                  career_field_id: e.target.value,
+                  field_id: e.target.value,
                 })
               }
               placeholder="Contoh: 1"
