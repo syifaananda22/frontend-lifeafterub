@@ -1,0 +1,193 @@
+.user-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+  padding: 20px 28px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Navbar tetap di atas tapi tidak sticky */
+.dashboard-navbar {
+  width: 100%;
+  height: 74px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 22px;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #edf1f7;
+  box-shadow: 0 8px 24px rgba(16,44,106,0.05);
+  position: relative; /* ubah dari sticky ke relative */
+  z-index: 999;
+}
+
+.dashboard-logo {
+  width: 145px;
+  object-fit: contain;
+}
+
+/* Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.nav-menu span {
+  color: #102c6a;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  position: relative;
+}
+
+.nav-menu span:hover {
+  color: #173f92;
+}
+
+.active-nav {
+  color: #102c6a !important;
+}
+
+.active-nav::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 999px;
+  background: #f5c400;
+}
+
+.user-hero {
+  margin-top: 40px;
+  padding: 28px 24px;
+  border-radius: 18px;
+  background: #102c6a;
+  color: white;
+}
+
+.user-badge {
+  display: inline-block;
+  background: #fff4bf;
+  color: #102c6a;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.user-hero h1 {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.user-hero p {
+  margin-top: 6px;
+  color: #eef4ff;
+  font-size: 13px;
+}
+
+.user-list-section {
+  margin-top: 18px;
+}
+
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+.user-card {
+  background: white;
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(16,44,106,0.05);
+}
+
+.user-photo {
+  width: 100%;
+  height: 180px;
+  border-radius: 16px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.user-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.user-content h3 {
+  color: #102c6a;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.user-desc {
+  color: #667085;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.user-field {
+  display: inline-block;
+  background: #fff4bf;
+  color: #102c6a;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.user-card button {
+  background: #f5c400;
+  color: #102c6a;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Data kosong full lebar */
+/* Data kosong full lebar card */
+.user-empty {
+  text-align: center;
+  padding: 40px 24px; /* tambahkan padding horizontal lebih besar */
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(16,44,106,0.05);
+  width: 100%;  /* pastikan full lebar kontainer */
+  max-width: 100%; /* pastikan tidak terbatasi */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-empty h3 {
+  color: #102c6a;
+  font-size: 16px;
+  margin-bottom: 6px;
+  width: 100%; /* penuh ke samping */
+}
+
+.user-empty p {
+  color: #667085;
+  font-size: 13px;
+  width: 100%; /* penuh ke samping */
+}
+
+.dashboard-footer {
+  margin-top: 28px;
+}

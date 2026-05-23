@@ -1,0 +1,6 @@
+/* Reuse UserCompaniesPage.css untuk konsistensi */
+@import './UserCompaniesPage.css';
+
+.user-card button {
+  width: 100%;
+}

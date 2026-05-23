@@ -122,7 +122,7 @@ export default function CareerDetailPage() {
         <div className="nav-menu">
           <span onClick={() => navigate("/dashboard")}>BERANDA</span>
           <span onClick={() => navigate("/history")}>RIWAYAT</span>
-          <span onClick={() => navigate("/profile")}>PROFIL</span>
+          <span onClick={() => navigate("/profil")}>PROFIL</span>
         </div>
       </nav>
 

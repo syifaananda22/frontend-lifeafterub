@@ -68,16 +68,8 @@ export default function AdminDashboard() {
             Kelola Data Alumni Karir
           </button>
 
-          <button onClick={() => navigate("/admin/recommendations")}>
-            Kelola Rekomendasi Karir
-          </button>
-
-          <button onClick={() => navigate("/admin/content")}>
-            Kelola Konten Website
-          </button>
-
-          <button onClick={() => navigate("/admin/activity")}>
-            Monitoring Aktivitas User
+          <button onClick={() => navigate("/admin/companies")}>
+            Kelola Perusahaan
           </button>
         </div>
 

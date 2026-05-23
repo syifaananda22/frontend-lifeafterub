@@ -370,3 +370,51 @@
 .career-detail-footer {
   margin-top: 38px;
 }
+
+.company-logo-wrapper {
+  width: 78px;
+  height: 78px;
+  border-radius: 20px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  border: 1px solid #eef2ff;
+}
+
+.company-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.modern-company-btn {
+  margin-top: 18px;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    #0f2d6b,
+    #1e40af
+  );
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.25s ease;
+  box-shadow: 0 10px 24px rgba(30, 64, 175, 0.18);
+}
+
+.modern-company-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(
+    135deg,
+    #14357d,
+    #2563eb
+  );
+}

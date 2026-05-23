@@ -62,6 +62,9 @@ export default function AlumniCareerPage() {
 
   const getAlumni = async () => {
     try {
+
+      const token = localStorage.getItem("token"); // taro disini
+
       const response = await axios.get(
         `http://127.0.0.1:8000/api/alumni-careers?search=${search}&fakultas=${fakultas}`
       );
@@ -74,6 +77,9 @@ export default function AlumniCareerPage() {
 
   const getStats = async () => {
     try {
+
+      const token = localStorage.getItem("token"); // taro juga di sini kalau belum ada
+      
       const response = await axios.get(
         "http://127.0.0.1:8000/api/alumni-careers/stats"
       );

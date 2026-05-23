@@ -193,30 +193,28 @@ localStorage.setItem("nama", namaUser);
 
           </div>
 
-          {/* REKOMENDASI */}
-          <div
-            className="fitur-card"
-            onClick={() => navigate("/recommendation")}
-          >
+          {/* PERUSAHAAN MITRA UB */}
+<div
+  className="fitur-card"
+  onClick={() => navigate("/companies")}
+>
+  <img src="/fitur3.png" />
 
-            <img src="/fitur3.png" />
+  <span className="fitur-badge">
+    UB Partner Companies
+  </span>
 
-<span className="fitur-badge">
-  Career Recommendation
-</span>
+  <h3>Perusahaan Mitra UB</h3>
 
-<h3>Rekomendasi Karir</h3>
+  <p>
+    Jelajahi  perusahaan yang bekerja sama dengan Universitas Brawijaya
+    dan lihat lowongan serta kesempatan magang.
+  </p>
 
-            <p>
-              Dapatkan rekomendasi profesi berdasarkan
-              minat dan kemampuan akademikmu.
-            </p>
-
-            <span className="fitur-link">
-  Lihat Rekomendasi →
-</span>
-
-          </div>
+  <span className="fitur-link">
+    Lihat Perusahaan →
+  </span>
+</div>
 
         </div>
 

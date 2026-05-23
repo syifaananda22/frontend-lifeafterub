@@ -1,23 +1,27 @@
 .admin-page {
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
   background: #f5f7fb;
   display: flex;
   padding: 12px;
   gap: 14px;
   font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .admin-sidebar {
   width: 220px;
-  height: calc(100vh - 36px);
+  min-width: 220px;
+  height: calc(100vh - 24px);
   background: #102c6a;
   border-radius: 24px;
   padding: 18px;
   color: white;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 12px 28px rgba(16,44,106,0.14);
+  box-shadow: 0 12px 28px rgba(16, 44, 106, 0.14);
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .admin-logo {
@@ -36,7 +40,7 @@
 .admin-menu button {
   border: none;
   background: transparent;
-  color: rgba(255,255,255,0.82);
+  color: rgba(255, 255, 255, 0.82);
   padding: 9px 11px;
   border-radius: 13px;
   text-align: left;
@@ -48,7 +52,7 @@
 
 .admin-menu button:hover,
 .admin-menu button.active {
-  background: rgba(255,255,255,0.14);
+  background: rgba(255, 255, 255, 0.14);
   color: white;
 }
 
@@ -67,7 +71,12 @@
 
 .admin-content {
   flex: 1;
-  overflow: hidden;
+  min-width: 0;
+  height: calc(100vh - 24px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 2px;
+  box-sizing: border-box;
 }
 
 .admin-hero {
@@ -75,7 +84,7 @@
   border-radius: 18px;
   padding: 16px 20px;
   border: 1px solid #edf1f7;
-  box-shadow: 0 6px 18px rgba(16,44,106,0.04);
+  box-shadow: 0 6px 18px rgba(16, 44, 106, 0.04);
 }
 
 .admin-badge {
@@ -105,7 +114,7 @@
 .admin-stats {
   margin-top: 10px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
 }
 
@@ -114,11 +123,13 @@
   background: #ffffff;
   border-radius: 20px;
   border: 1px solid #edf1f7;
-  box-shadow: 0 8px 22px rgba(16,44,106,0.04);
+  box-shadow: 0 8px 22px rgba(16, 44, 106, 0.04);
+  box-sizing: border-box;
 }
 
 .admin-stat-card {
   padding: 12px 14px;
+  min-width: 0;
 }
 
 .admin-stat-card span {
@@ -153,35 +164,8 @@
 }
 
 .admin-table-card {
-  padding: 10px 14px;
-  max-height: 180px;
-  overflow: hidden;
-}
-
-.admin-table-card table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.admin-table-card th {
-  text-align: left;
-  color: #102c6a;
-  font-size: 10px;
-  padding: 7px;
-  border-bottom: 1px solid #edf1f7;
-}
-
-.admin-table-card td {
-  color: #667085;
-  font-size: 10px;
-  padding: 7px;
-  border-bottom: 1px solid #edf1f7;
-}
-
-.admin-table-card {
   padding: 22px 26px;
-  max-height: 295px;
-
+  max-height: 420px;
   overflow-y: auto;
   overflow-x: auto;
 }
@@ -190,6 +174,23 @@
   width: 100%;
   min-width: 700px;
   border-collapse: collapse;
+}
+
+.admin-table-card th {
+  text-align: left;
+  color: #102c6a;
+  font-size: 10px;
+  padding: 10px 7px;
+  border-bottom: 1px solid #edf1f7;
+  white-space: nowrap;
+}
+
+.admin-table-card td {
+  color: #667085;
+  font-size: 10px;
+  padding: 10px 7px;
+  border-bottom: 1px solid #edf1f7;
+  white-space: nowrap;
 }
 
 .admin-table-card tr:last-child td {
@@ -201,6 +202,7 @@
   border-radius: 999px;
   font-size: 10px;
   font-weight: 800;
+  display: inline-block;
 }
 
 .status.success {
@@ -211,4 +213,33 @@
 .status.pending {
   background: #fff4bf;
   color: #102c6a;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .admin-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-page {
+    flex-direction: column;
+    height: auto;
+    overflow: auto;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .admin-content {
+    height: auto;
+    overflow: visible;
+  }
+
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
 }
