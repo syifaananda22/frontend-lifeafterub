@@ -5,10 +5,10 @@ Frontend website Life After UB dibuat menggunakan React JS dan Vite sebagai tamp
 ## Fitur
 - Login & Register
 - Dashboard User
-- Simulasi & Rekomendasi Karir
+- Simulasi Karir, Karir Alumni, Perusahaan Mitra UB
 - Riwayat Simulasi
 - Dashboard Admin
-- CRUD Data User, Karir, Alumni, dan Rekomendasi Karir
+- CRUD Data User, Karir, Alumni, dan Perusahaan Mitra UB
 
 ## Teknologi
 - React JS
