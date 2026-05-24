@@ -14,8 +14,8 @@ import AdminAcademicPage from "./pages/AdminAcademicPage";
 import AdminCareersPage from "./pages/AdminCareersPage";
 import AdminCareerFieldsPage from "./pages/AdminCareerFieldsPage";
 import AdminAlumniPage from "./pages/AdminAlumniPage";
-import AdminContentPage from "./pages/AdminContentPage";
 import AdminActivityPage from "./pages/AdminActivityPage";
+import AdminCompanyJobsPage from "./pages/AdminCompanyJobsPage";
 
 /* ================= TAMBAHAN ================= */
 import HistoryPage from "./pages/HistoryPage";
@@ -57,8 +57,8 @@ export default function App() {
         <Route path="/admin/career-fields" element={<AdminCareerFieldsPage />} />
         <Route path="/admin/alumni" element={<AdminAlumniPage />} />
         <Route path="/admin/companies" element={<AdminCompaniesPage />} />
-        <Route path="/admin/content" element={<AdminContentPage />} />
         <Route path="/admin/activity" element={<AdminActivityPage />} />
+        <Route path="/admin/company-jobs" element={<AdminCompanyJobsPage />} />
         {/* ========================================== */}
 
         <Route path="*" element={<Navigate to="/" />} />

@@ -111,7 +111,7 @@ export default function AdminCareerFieldsPage() {
             ADMIN PANEL
           </span>
 
-          <h1>Kelola Career Field</h1>
+          <h1>Kelola Bidang Karir</h1>
 
           <p>
             Lihat, tambah, ubah, dan hapus kategori bidang karir pada sistem
@@ -124,7 +124,7 @@ export default function AdminCareerFieldsPage() {
           className="add-user-btn"
           onClick={openCreateModal}
         >
-          + Tambah Field
+          + Tambah Bidang
         </button>
 
       </div>
@@ -136,7 +136,7 @@ export default function AdminCareerFieldsPage() {
           <thead>
             <tr>
               <th>ID</th>
-              <th>Nama Field</th>
+              <th>Nama Bidang</th>
               <th>Aksi</th>
             </tr>
           </thead>

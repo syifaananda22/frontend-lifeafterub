@@ -61,7 +61,7 @@ export default function AdminDashboard() {
           </button>
 
           <button onClick={() => navigate("/admin/career-fields")}>
-            Kelola Career Field
+            Kelola Bidang Karir
           </button>
 
           <button onClick={() => navigate("/admin/alumni")}>
@@ -70,6 +70,10 @@ export default function AdminDashboard() {
 
           <button onClick={() => navigate("/admin/companies")}>
             Kelola Perusahaan
+          </button>
+
+          <button onClick={() => navigate("/admin/company-jobs")}>
+            Kelola Lowongan Pekerjaan
           </button>
         </div>
 

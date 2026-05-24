@@ -14,14 +14,14 @@
   min-width: 220px;
   height: calc(100vh - 24px);
   background: #102c6a;
-  border-radius: 24px;
+  border-radius: 8px;
   padding: 18px;
   color: white;
   display: flex;
   flex-direction: column;
   box-shadow: 0 12px 28px rgba(16, 44, 106, 0.14);
   box-sizing: border-box;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .admin-logo {
@@ -29,25 +29,46 @@
   object-fit: contain;
   filter: brightness(0) invert(1) contrast(120%);
   margin-bottom: 22px;
+  flex-shrink: 0;
 }
 
 .admin-menu {
   display: flex;
   flex-direction: column;
   gap: 7px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 4px;
+  flex: 1;
+}
+
+.admin-menu::-webkit-scrollbar {
+  width: 5px;
+}
+
+.admin-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.admin-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
 }
 
 .admin-menu button {
+  width: 100%;
   border: none;
   background: transparent;
   color: rgba(255, 255, 255, 0.82);
-  padding: 9px 11px;
-  border-radius: 13px;
+  padding: 10px 12px;
+  border-radius: 6px;
   text-align: left;
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
   transition: 0.2s ease;
+  line-height: 1.4;
+  flex-shrink: 0;
 }
 
 .admin-menu button:hover,
@@ -57,16 +78,17 @@
 }
 
 .admin-logout-btn {
-  margin-top: auto;
-  margin-bottom: 6px;
+  margin-top: 14px;
+  margin-bottom: 0;
   border: none;
   background: #f5c400;
   color: #102c6a;
   padding: 11px;
-  border-radius: 14px;
+  border-radius: 8px;
   font-size: 12px;
   font-weight: 800;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .admin-content {
@@ -79,9 +101,22 @@
   box-sizing: border-box;
 }
 
+.admin-content::-webkit-scrollbar {
+  width: 7px;
+}
+
+.admin-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.admin-content::-webkit-scrollbar-thumb {
+  background: rgba(16, 44, 106, 0.25);
+  border-radius: 999px;
+}
+
 .admin-hero {
   background: #ffffff;
-  border-radius: 18px;
+  border-radius: 8px;
   padding: 16px 20px;
   border: 1px solid #edf1f7;
   box-shadow: 0 6px 18px rgba(16, 44, 106, 0.04);
@@ -121,7 +156,7 @@
 .admin-stat-card,
 .admin-table-card {
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 8px;
   border: 1px solid #edf1f7;
   box-shadow: 0 8px 22px rgba(16, 44, 106, 0.04);
   box-sizing: border-box;
@@ -142,6 +177,7 @@
   font-size: 22px;
   font-weight: 800;
   margin-top: 4px;
+  margin-bottom: 0;
 }
 
 .admin-activity {
@@ -161,6 +197,7 @@
 .admin-section-title p {
   color: #667085;
   font-size: 11px;
+  margin: 0;
 }
 
 .admin-table-card {
@@ -168,6 +205,20 @@
   max-height: 420px;
   overflow-y: auto;
   overflow-x: auto;
+}
+
+.admin-table-card::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.admin-table-card::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.admin-table-card::-webkit-scrollbar-thumb {
+  background: rgba(16, 44, 106, 0.25);
+  border-radius: 999px;
 }
 
 .admin-table-card table {
@@ -231,7 +282,13 @@
 
   .admin-sidebar {
     width: 100%;
+    min-width: 100%;
     height: auto;
+    max-height: 420px;
+  }
+
+  .admin-menu {
+    max-height: 260px;
   }
 
   .admin-content {
