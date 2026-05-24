@@ -1,18 +1,40 @@
 import { useState, useEffect } from "react";
 
+type ToastType = "success" | "error";
+
+type ToastState = {
+  message: string;
+  type: ToastType;
+  show: boolean;
+};
+
+declare global {
+  interface Window {
+    showToast: (message: string, type?: ToastType) => void;
+  }
+}
+
 export default function Toast() {
-  const [toast, setToast] = useState({
+  const [toast, setToast] = useState<ToastState>({
     message: "",
-    type: "",
+    type: "success",
     show: false,
   });
 
   useEffect(() => {
-    window.showToast = (message, type = "success") => {
-      setToast({ message, type, show: true });
+    window.showToast = (message: string, type: ToastType = "success") => {
+      setToast({
+        message,
+        type,
+        show: true,
+      });
 
       setTimeout(() => {
-        setToast({ message: "", type: "", show: false });
+        setToast({
+          message: "",
+          type: "success",
+          show: false,
+        });
       }, 3000);
     };
   }, []);

@@ -25,7 +25,7 @@ import CompanyJobsPage from "./pages/CompanyJobsPage";
 import AdminCompaniesPage from "./pages/AdminCompaniesPage";
 /* ========================================== */
 
-import Toast from "./components/Toast";
+import Toast from "./components/Toast.tsx";
 
 export default function App() {
   return (
